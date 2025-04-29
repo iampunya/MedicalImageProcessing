@@ -1,0 +1,15 @@
+import pydicom
+import matplotlib.pyplot as plt
+dicom_path = 'C:/Users/punya/OneDrive/Desktop/DICOM/practice.dcm'
+
+# Load the DICOM file
+ds = pydicom.dcmread(dicom_path)
+
+# Access the pixel data
+image = ds.pixel_array
+
+# Show the image using matplotlib
+plt.imshow(image, cmap=plt.cm.gray)
+plt.title('DICOM Image')
+plt.axis('off')
+plt.show()
