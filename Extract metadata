@@ -1,0 +1,14 @@
+import pydicom
+
+# Load the DICOM file
+dicom_file = pydicom.dcmread('C:/Users/punya/OneDrive/Desktop/DICOM/practice.dcm')
+
+# Extract metadata
+patient_id = dicom_file.get('PatientID', 'Unknown')
+modality = dicom_file.get('Modality', 'Unknown')
+study_date = dicom_file.get('StudyDate', 'Unknown')
+
+# Print extracted metadata
+print(f"Patient ID: {patient_id}")
+print(f"Modality: {modality}")
+print(f"Study Date: {study_date}")
